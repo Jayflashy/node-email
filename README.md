@@ -1,6 +1,6 @@
 # About Node email
 
-Node email is a web application built on Node js framework to send emails.
+Node email is a web application built on Node js and express framework to send emails.
 You can send to a single email or send to a multiple email address and everthing would be delivered.
 
 ### Features 
@@ -30,4 +30,4 @@ If you discover a security vulnerability within Node email, please send a DM on 
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The Node and express framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
