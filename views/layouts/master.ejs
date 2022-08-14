@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title><%- title %> | Soft Life - ICSMS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Soft life node project" name="description" />
+    <meta content="Jay flash" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="img/favicon.png">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">{{env('APP_NAME')}}</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="{{route('index')}}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('email')}}">Sendmail</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="{{route('setting')}}">Settings</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <main class="container">
+        <div class="bg-light p-2 rounded">
+            <%- body %>
+        </div>
+    </main>
+   
+    <!-- js files -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    
+</body>
+
+</html>

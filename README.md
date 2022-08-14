@@ -17,7 +17,7 @@ Node email is accessible, powerful, and provides tools required for large and me
 - Locate the file directory and open the terminal 
 - you'll then need to run ```npm install``` to download the node modules files
 - Once composer has finished installing all the required packages, you need to start the web server.
-- type ``npm start`` to launch the server.
+- type ``npm start`` or ```nodemon index``` to launch the server.
 
 
 ## Contributing
