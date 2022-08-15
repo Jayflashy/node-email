@@ -2,9 +2,18 @@
 const path = require('path')
 const os = require('os')
 const fs = require('fs')
-
+const nodemailer = require('nodemailer');
 const envFile = path.resolve(__dirname, '../.env')
 const readEnvFile = () => fs.readFileSync(envFile,'utf-8').split(os.EOL)
+
+let transport = nodemailer.createTransport({
+    host: process.env.MAIL_HOST,
+    port: process.env.MAIL_HOST,
+    auth: {
+      user: process.env.MAIL_USERNAME,
+      pass: process.env.MAIL_PASSWORD
+    }
+});
 
 const index = (req, res) => {
     res.render('index', {title: "Powerful Email sender"})
@@ -13,6 +22,29 @@ const index = (req, res) => {
 const email = (req, res) => {
     res.render('email',{title: "Send Email"})
 }
+
+const sendemail = (req, res, next) => {
+    // console.log(req.body)
+    const request = (req.body)
+    // validation?
+    // res.send(req.body)
+    const mailOptions = {
+        from: process.env.MAIL_USERNAME, // Sender address
+        to: request['email'], // List of recipients
+        subject: request['subject'], // Subject line
+        text: request['content'], // Plain text body
+   };
+    // send email
+    transport.sendMail(mailOptions, function(err, info) {
+        if (err) {
+          console.log(err)
+        } else {
+          console.log("Email sent successfully");
+          res.redirect('/email')
+        }
+    });    
+}
+
 const settings = (req, res) => {
     res.render('settings',{title: "System Settings"})
 }
@@ -51,5 +83,5 @@ const saveEnv = (key, value) => {
     fs.writeFileSync(envFile, envVars.join(os.EOL));
 }
 module.exports = {
-    index, email,settings,saveSetting
+    index, email,settings,saveSetting, sendemail
 }

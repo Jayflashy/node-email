@@ -17,4 +17,6 @@ router.post('/setting', HomeController.saveSetting)
 
 router.get('/email', HomeController.email)
 
+router.post('/sendemail', HomeController.sendemail)
+
 module.exports = router
