@@ -1,0 +1,78 @@
+<div class="card">
+    <div class="card-header">
+        <h4> General Settings</h4> 
+    </div>
+    <div class="card-body">
+        <form action="/setting" method="POST" class="">
+            <div class="form-group row">
+                <input type="hidden" name="types[]" value="SITE_NAME">
+                <div class="col-lg-4">
+                    <label class="form-label">Website Name</label>
+                </div>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" name="SITE_NAME" value="<%= process.env.SITE_NAME %>" placeholder="Website Name">
+                </div>
+            </div>
+            <div class="form-group row">
+                <input type="hidden" name="types[]" value="MAIL_HOST">
+                <div class="col-lg-4">
+                    <label class="form-label">MAIL HOST</label>
+                </div>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" name="MAIL_HOST" value="<%= process.env.MAIL_HOST %>" placeholder="MAIL HOST">
+                </div>
+            </div>
+            <div class="form-group row">
+                <input type="hidden" name="types[]" value="MAIL_PORT">
+                <div class="col-lg-4">
+                    <label class="form-label">MAIL PORT</label>
+                </div>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" name="MAIL_PORT" value="<%= process.env.MAIL_PORT %>" placeholder="MAIL PORT">
+                </div>
+            </div>
+            <div class="form-group row">
+                <input type="hidden" name="types[]" value="MAIL_USERNAME">
+                <div class="col-lg-4">
+                    <label class="form-label">MAIL USERNAME</label>
+                </div>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" name="MAIL_USERNAME" value="<%= process.env.MAIL_USERNAME %>" placeholder="MAIL USERNAME">
+                </div>
+            </div>
+            <div class="form-group row">
+                <input type="hidden" name="types[]" value="MAIL_PASSWORD">
+                <div class="col-lg-4    ">
+                    <label class="form-label">MAIL PASSWORD</label>
+                </div>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" name="MAIL_PASSWORD" value="<%= process.env.MAIL_PASSWORD %>" placeholder="MAIL PASSWORD">
+                </div>
+            </div>
+            <div class="form-group row">
+                <input type="hidden" name="types[]" value="MAIL_ENCRYPTION">
+                <div class="col-lg-4">
+                    <label class="form-label">MAIL ENCRYPTION</label>
+                </div>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" name="MAIL_ENCRYPTION" value="<%= process.env.MAIL_ENCRYPTION %>" placeholder="MAIL ENCRYPTION">
+                </div>
+            </div>
+            <div class="form-group row">
+                <input type="hidden" name="types[]" value="MAIL_FROM_ADDRESS">
+                <div class="col-lg-4">
+                    <label class="form-label">MAIL FROM ADDRESS</label>
+                </div>
+                <div class="col-lg-8">
+                    <input type="text" class="form-control" name="MAIL_FROM_ADDRESS" value="<%= process.env.MAIL_FROM_ADDRESS %>" placeholder="MAIL FROM ADDRESS">
+                </div>
+            </div>
+          
+            <div class="form-group mb-0 text-end">
+                <button class="btn btn-primary" type="submit">Save</button>
+            </div>
+        
+        </form>
+   
+    </div>
+</div>

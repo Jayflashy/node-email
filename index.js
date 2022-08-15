@@ -4,11 +4,15 @@ const bodyParser = require('body-parser')
 require('dotenv').config()
 const {port = 3000} = process.env
 const cors = require("cors") // import cors
-const expressLayouts = require('express-ejs-layouts');
+const path = require('path')
+const os = require('os')
+const fs = require('fs')
+const expressLayouts = require('express-ejs-layouts')
 
 const app = express()
-var path = require('path');
 app.set('view engine', 'ejs')
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended:true})) 
 
 // ROutes
 const Routes = require('./src/routes.js')

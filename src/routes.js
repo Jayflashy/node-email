@@ -11,6 +11,10 @@ router.get('/', HomeController.index)
 
 router.get('/index', HomeController.index)
 
-router.get('/about', HomeController.about)
+router.get('/settings', HomeController.settings)
+
+router.post('/setting', HomeController.saveSetting)
+
+router.get('/email', HomeController.email)
 
 module.exports = router
