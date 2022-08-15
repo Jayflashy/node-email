@@ -18,11 +18,16 @@ const settings = (req, res) => {
 }
 
 const saveSetting = (req, res) => {
-    let formReq = req.body 
-    console.log(formReq)
-    saveEnv('NAME','Funmilola')
-    console.log(getEnvValue('NAME'))
-    res.json({requestBody: req.body})
+    const formReq = req.body
+    // console.log(formReq)
+    // console.log(formReq['SITE_NAME'])
+    formReq.types.forEach((element , index)=> {
+        // console.log(element, formReq[`${element}`])
+        saveEnv(element, formReq[`${element}`])
+    });   
+    console.log(process.env)
+    
+    res.status(200).redirect('/settings');
 
 }
 const getEnvValue = (key) => {
